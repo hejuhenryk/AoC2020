@@ -2,16 +2,20 @@
 fetch("../dist/src/input3.txt")
     .then((res) => res.text())
     .then((res) => res.split("\n").map((line) => line.split("").slice(0, -1)))
-    .then((res) => console.log(moveTrueForest(res)));
-const moveTrueForest = (forest) => {
-    console.log(forest);
+    .then((res) => trySlopes(res, [
+    [1, 1],
+    [3, 1],
+    [5, 1],
+    [7, 1],
+    [1, 2],
+]))
+    .then((res) => console.log(res.reduce((prev, cur) => (cur = prev * cur), 1)));
+const moveTrueForest = (forest, step) => {
     let trees = 0;
-    const step = [3, 1];
     let tobogganPos = [0, 0];
     const path = [];
     const length = forest[0].length;
     const height = forest.length;
-    console.log(height, length);
     const moveTo = (position, move) => [
         position[0] + move[0],
         position[1] + move[1],
@@ -23,4 +27,5 @@ const moveTrueForest = (forest) => {
     }
     return trees;
 };
+const trySlopes = (forest, slopes) => slopes.map((s) => moveTrueForest(forest, s));
 //# sourceMappingURL=day3.js.map
