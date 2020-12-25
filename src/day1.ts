@@ -1,4 +1,4 @@
-fetch("../dist/src/input1.txt")
+fetch("../dist/inputs/input1.txt")
   .then((res) => res.text())
   .then((res) => console.log(sumThreeTo2020(res.split("\n").map((n) => +n))));
 

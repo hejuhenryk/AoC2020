@@ -1,4 +1,4 @@
-fetch("../dist/src/input5.txt")
+fetch("../dist/inputs/input5.txt")
   .then((res) => res.text())
   .then((res) => res.split("\n"))
   .then((res) => res.map((code) => readCode(code)))

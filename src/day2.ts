@@ -1,4 +1,4 @@
-fetch("../dist/src/input2.txt")
+fetch("../dist/inputs/input2.txt")
   .then((res) => res.text())
   .then((res) => res.split("\n"))
   .then((res) => res.filter(filterFunPartB))

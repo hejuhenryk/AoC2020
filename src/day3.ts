@@ -1,4 +1,4 @@
-fetch("../dist/src/input3.txt")
+fetch("../dist/inputs/input3.txt")
   .then((res) => res.text())
   .then((res) => res.split("\n").map((line) => line.split("").slice(0, -1)))
   .then((res) =>
